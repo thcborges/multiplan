@@ -44,6 +44,6 @@ RUN poetry install
 RUN python multiplan/build.py
 RUN chown -R $UNAME $HOME
 USER $UNAME
-EXPOSE 8050
+EXPOSE 5000
 # CMD python multiplan/app.py
 CMD gunicorn --bind 0.0.0.0:5000 --timeout 600 multiplan.app:server
